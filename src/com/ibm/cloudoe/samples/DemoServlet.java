@@ -49,15 +49,10 @@ public class DemoServlet extends HttpServlet {
 	// If running locally complete the variables below
 	// with the information in VCAP_SERVICES
 
-	private String baseURL = "https://gateway-s.watsonplatform.net/watsondialog-service-beta/api";
-	private String username = "5a4a5155-8b57-4a3f-b6c7-4c23689f59df";
-	private String password = "D46CcsG929pw";
-	private String dialogId = "f93261ad-749c-4d7f-a58c-94965bf8e644";
-
-	// private String baseURL = "<url>";
-	// private String username = "<username>";
-	// private String password = "<password>";
-	// private String dialogId = "<dialog-id>";
+	private String baseURL = "<url>";
+	private String username = "<username>";
+	private String password = "<password>";
+	private String dialogId = "<dialog-id>";
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -117,7 +112,7 @@ public class DemoServlet extends HttpServlet {
 	@Override
 	public void init() throws ServletException {
 		super.init();
-		//processVCAPServices();
+		processVCAPServices();
 	}
 
 	/**
