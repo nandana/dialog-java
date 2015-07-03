@@ -44,7 +44,7 @@ public class DemoServlet extends HttpServlet {
 			.getLogger(DemoServlet.class.getName());
 	private static final long serialVersionUID = 1L;
 
-	private String serviceName = "dialog";
+	private String serviceName = "watson_dialog_service";
 
 	// If running locally complete the variables below
 	// with the information in VCAP_SERVICES
