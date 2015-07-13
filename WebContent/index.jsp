@@ -38,9 +38,9 @@
 						</div>
 						<div class="resource-item-container">
 							<a
-								href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/apis/#!/dialog"
+								href="https://dialog-doc-la.mybluemix.net/apis/"
 								class="resource-item">API Overview</a><a
-								href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/doc/dialog/"
+								href="https://dialog-doc-la.mybluemix.net/doc/dialog"
 								class="resource-item">Documentation</a><a
 								href="https://github.com/watson-developer-cloud/dialog-java"
 								class="resource-item">Fork on Github</a>
