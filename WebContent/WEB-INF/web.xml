@@ -17,4 +17,8 @@
 		<servlet-name>Application Servlet</servlet-name>
 		<url-pattern>/demo</url-pattern>
 	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Application Servlet</servlet-name>
+		<url-pattern>/demo/*</url-pattern>
+	</servlet-mapping>
 </web-app>

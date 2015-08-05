@@ -1,10 +1,13 @@
-# Dialog Java Starter Application
+# Dialog Java
 
   The Dialog starter application in Java is a sample that demonstrates how the IBM Watson [Dialog service][service_url] works in a specific context.
 
 Give it a try! Click the button below to fork into IBM DevOps Services and deploy your own copy of this application on Bluemix.
 
 [![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/watson-developer-cloud/dialog-java)
+
+**Note:** You need to have a dialog templated in order to use this app. You can use the [dialog-tool](https://github.com/watson-developer-cloud/dialog-tool) to create and edit your dialog.
+
 
 ## Getting started
 
@@ -17,7 +20,7 @@ Give it a try! Click the button below to fork into IBM DevOps Services and deplo
     ```none
     applications:
     - services:
-      - dialog-service
+      - dialog-service-beta
       name: <application-name>
       path: output/webApp.war
       memory: 512M
@@ -33,7 +36,7 @@ Give it a try! Click the button below to fork into IBM DevOps Services and deplo
   5. Create the Dialog service in Bluemix by running the following command:
 
     ```sh
-    $ cf create-service dialog free dialog-service
+    $ cf create-service dialog beta dialog-service
     ```
 
   6. Download and install the [ant][ant] compiler.
@@ -51,7 +54,14 @@ Give it a try! Click the button below to fork into IBM DevOps Services and deplo
     ```sh
     $ cf push
     ```
-For more information, including code snippets and references, see the full [Getting Started][getting_started] documentation.
+
+  9. Add your `DIALOG_ID` and restage the app:
+
+    ```sh
+    $ cf se <application-name> DIALOG_ID <dialog-id>
+    $ cf restage <application-name>
+    ```
+
 
 ## Running the application locally
 
@@ -76,8 +86,8 @@ For more information, including code snippets and references, see the full [Gett
             "username": "<username>"
           },
         "label": "dialog",
-        "name": "dialog-service",
-        "plan": "free"
+        "name": "dialog-service-beta",
+        "plan": "beta"
      }]
     }
     }
@@ -116,7 +126,6 @@ For more information, including code snippets and references, see the full [Gett
 
 [service_url]: http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/dialog.html
 [cloud_foundry]: https://github.com/cloudfoundry/cli
-[getting_started]: http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/doc/getting_started/
 [sign_up]: https://apps.admin.ibmcloud.com/manage/trial/bluemix.html?cm_mmc=WatsonDeveloperCloud-_-LandingSiteGetStarted-_-x-_-CreateAnAccountOnBluemixCLI
 [liberty]: https://developer.ibm.com/wasdev/downloads/
 [liberty_mac]: http://www.stormacq.com/how-to-install-websphere-8-5-liberty-profile-on-mac/
