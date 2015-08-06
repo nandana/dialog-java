@@ -137,6 +137,8 @@ public class DemoServlet extends HttpServlet {
 	@Override
 	public void init() throws ServletException {
 		super.init();
+		if (System.getenv("DIALOG_ID") != null)
+			dialogId = System.getenv("DIALOG_ID");
 		processVCAPServices();
 	}
 
