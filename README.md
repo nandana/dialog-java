@@ -37,7 +37,7 @@ Give it a try! Click the button below to fork into IBM DevOps Services and deplo
   5. Create the Dialog service in Bluemix by running the following command:
 
     ```sh
-    $ cf create-service dialog beta dialog-service
+    $ cf create-service dialog standard dialog-service
     ```
 
   6. Download and install the [ant][ant] compiler.
@@ -87,8 +87,8 @@ Give it a try! Click the button below to fork into IBM DevOps Services and deplo
             "username": "<username>"
           },
         "label": "dialog",
-        "name": "dialog-service-beta",
-        "plan": "beta"
+        "name": "dialog-service",
+        "plan": "standard"
      }]
     }
     }
