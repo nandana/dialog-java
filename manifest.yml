@@ -1,11 +1,11 @@
 ---
 declared-services:
-  dialog-service-beta:
+  dialog-service:
     label: dialog
-    plan: beta
+    plan: standard
 applications:
 - services:
-  - dialog-service-beta
+  - dialog-service
   name: dialog-java
   path: output/webApp.war
   memory: 512M
