@@ -1,4 +1,4 @@
-# Dialog Java
+# Dialog Java Starter Application
 
   The Dialog starter application in Java is a sample that demonstrates how the IBM Watson [Dialog service][service_url] works in a specific context.
 <p align="center">
@@ -21,9 +21,9 @@ Give it a try! Click the button below to fork into IBM DevOps Services and deplo
     ```none
     applications:
     - services:
-      - dialog-service-beta
+      - dialog-service
       name: <application-name>
-      path: output/webApp.war
+      path: webApp.war
       memory: 512M
     ```
 
@@ -53,7 +53,7 @@ Give it a try! Click the button below to fork into IBM DevOps Services and deplo
   8. Push it live by running the following command:
 
     ```sh
-    $ cf push
+    $ cf push -p output/webApp.war
     ```
 
   9. Add your `DIALOG_ID` and restage the app:
