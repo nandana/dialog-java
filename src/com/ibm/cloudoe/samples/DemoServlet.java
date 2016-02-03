@@ -185,8 +185,12 @@ public class DemoServlet extends HttpServlet {
 				JSONObject credentials = (JSONObject) service
 						.get("credentials");
 				baseURL = (String) credentials.get("url");
-				username = (String) credentials.get("username");
-				password = (String) credentials.get("password");
+				//username = (String) credentials.get("username");
+				//password = (String) credentials.get("password");
+
+				username = System.getenv("USERNAME");
+				password = System.getenv("PASSWORD");
+
 				logger.info("baseURL  = " + baseURL);
 				logger.info("username = " + username);
 				logger.info("password = " + password);
