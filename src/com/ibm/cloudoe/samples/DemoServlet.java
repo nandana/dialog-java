@@ -15,11 +15,15 @@
 
 package com.ibm.cloudoe.samples;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
@@ -98,11 +102,12 @@ public class DemoServlet extends HttpServlet {
 			HttpResponse httpResponse = response.returnResponse();
 			resp.setStatus(httpResponse.getStatusLine().getStatusCode());
 
-			logger.log(Level.INFO, httpResponse.getStatusLine().getReasonPhrase());
-			logger.log(Level.INFO, httpResponse.toString());
+			logger.log(Level.INFO, "Reason phrase: " + httpResponse.getStatusLine().getReasonPhrase());
 			if(httpResponse.getEntity() != null) {
-				logger.log(Level.INFO, httpResponse.getEntity().getContent().toString());
+				logger.log(Level.INFO, "Response entity: " + read(httpResponse.getEntity().getContent()));
 			}
+			logger.log(Level.INFO, "Response " + httpResponse.toString());
+
 
 			ServletOutputStream servletOutputStream = resp.getOutputStream();
 			httpResponse.getEntity().writeTo(servletOutputStream);
@@ -213,4 +218,11 @@ public class DemoServlet extends HttpServlet {
 		}
 		return sysEnv;
 	}
+
+	public static String read(InputStream input) throws IOException {
+		try (BufferedReader buffer = new BufferedReader(new InputStreamReader(input))) {
+			return buffer.lines().collect(Collectors.joining("\n"));
+		}
+	}
+
 }
