@@ -98,6 +98,12 @@ public class DemoServlet extends HttpServlet {
 			HttpResponse httpResponse = response.returnResponse();
 			resp.setStatus(httpResponse.getStatusLine().getStatusCode());
 
+			logger.log(Level.INFO, httpResponse.getStatusLine().getReasonPhrase());
+			logger.log(Level.INFO, httpResponse.toString());
+			if(httpResponse.getEntity() != null) {
+				logger.log(Level.INFO, httpResponse.getEntity().getContent().toString());
+			}
+
 			ServletOutputStream servletOutputStream = resp.getOutputStream();
 			httpResponse.getEntity().writeTo(servletOutputStream);
 			servletOutputStream.flush();
