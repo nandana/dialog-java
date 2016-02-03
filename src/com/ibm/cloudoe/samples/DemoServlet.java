@@ -15,12 +15,11 @@
 
 package com.ibm.cloudoe.samples;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
@@ -220,9 +219,16 @@ public class DemoServlet extends HttpServlet {
 	}
 
 	public static String read(InputStream input) throws IOException {
-		try (BufferedReader buffer = new BufferedReader(new InputStreamReader(input))) {
-			return buffer.lines().collect(Collectors.joining("\n"));
+
+		StringBuilder textBuilder = new StringBuilder();
+		try (Reader reader = new BufferedReader(new InputStreamReader
+				(input, Charset.forName(StandardCharsets.UTF_8.name())))) {
+			int c = 0;
+			while ((c = reader.read()) != -1) {
+				textBuilder.append((char) c);
+			}
 		}
+		return textBuilder.toString();
 	}
 
 }
