@@ -13,21 +13,12 @@
 	<header class="_demo--heading">
 	<div class="_demo--container">
 		<a class="wordmark" href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/">
-			<span class="wordmark--left">IBM</span>
-			<span class="wordmark--right">Watson Developer Cloud</span>
+			<span class="wordmark--left">OEG</span>
+			<span class="wordmark--right">Watson Dialog Test</span>
 		</a>
 		<nav class="heading-nav">
-			<a class="heading-nav--item" href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/services-catalog.html">
-				Services
-			</a>
-			<a class="heading-nav--item" href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/doc/">
-				Docs
-			</a>
-			<a class="heading-nav--item" href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/gallery.html">
-				App Gallery
-			</a>
-			<a class="heading-nav--item" href="https://developer.ibm.com/watson/">
-				Community
+			<a class="heading-nav--item" href="http://www.oeg-upm.net/">
+				Ontology Engineering Group
 			</a>
 		</nav>
 	</div>
@@ -74,10 +65,10 @@
 		<div class="radio-group">
 			<input type="radio" name="dialog-template" id="hello-radio" value="hello" class="base--radio" checked>
 			<label for="hello-radio" class="base--label radio-group--label">Order A Pizza Template</label>
-			<input type="radio" name="dialog-template" id="yellow-radio" value="yellow" class="base--radio" disabled>
-			<label for="yellow-radio" class="base--label radio-group--label">Tech Support Template</label>
-			<input type="radio" name="dialog-template" id="green-radio" value="green" class="base--radio" disabled>
-			<label for="green-radio" class="base--label radio-group--label">Movie Template</label>
+			<%--<input type="radio" name="dialog-template" id="yellow-radio" value="yellow" class="base--radio" disabled>--%>
+			<%--<label for="yellow-radio" class="base--label radio-group--label">Tech Support Template</label>--%>
+			<%--<input type="radio" name="dialog-template" id="green-radio" value="green" class="base--radio" disabled>--%>
+			<%--<label for="green-radio" class="base--label radio-group--label">Movie Template</label>--%>
 		</div>
 		<div class="separate-line"></div>
 		<h2 class="base--h2">

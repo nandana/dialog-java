@@ -84,6 +84,9 @@ public class DemoServlet extends HttpServlet {
 		String path = req.getPathInfo();
 		Request request = null;
 		try {
+
+			logger.log(Level.INFO, "Path: " + path);
+
 			if (path.equals(CONVERSATION))
 				request = conversation(req);
 			else if (path.equals(PROFILE))
@@ -116,6 +119,10 @@ public class DemoServlet extends HttpServlet {
 	private Request profile(HttpServletRequest req) throws URISyntaxException {
 		String clientId = req.getParameter("client_id");
 		URI converseURI = new URI(baseURL + "/v1/dialogs/" + dialogId + "/profile?client_id="+ clientId).normalize();
+
+		logger.log(Level.INFO, "Client ID  :" + clientId);
+		logger.log(Level.INFO, "Converse URL  :" + converseURI);
+
 		return Request.Get(converseURI);
 	}
 
@@ -126,6 +133,13 @@ public class DemoServlet extends HttpServlet {
 		String clientId = req.getParameter("client_id");
 
 		URI converseURI = new URI(baseURL + "/v1/dialogs/" + dialogId+ "/conversation").normalize();
+
+		logger.log(Level.INFO, "Input :" + input);
+		logger.log(Level.INFO, "Conversation ID  :" + conversationId);
+		logger.log(Level.INFO, "Client ID  :" + clientId);
+		logger.log(Level.INFO, "Converse URL  :" + converseURI);
+
+
 		return Request.Post(converseURI).bodyForm(
 			Form.form()
 				.add("input", input)
