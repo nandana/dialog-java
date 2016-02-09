@@ -4,7 +4,7 @@
         <folder label="Main">
             <output>
                 <prompt selectionType="RANDOM">
-                    <item>Hi, I'm Watson! I can help you order a pizza, what size would you like?</item>
+                    <item>Hi, I'm Watson (well, a dumb version of it) !! What do you like to know?</item>
                 </prompt>
                 <goto ref="getUserInput_2442994"/>
             </output>
@@ -31,23 +31,22 @@
             <folder label="Live Content" id="folder_2442998">
                 <input>
                     <grammar>
-                        <item>What do you have?</item>
-                        <item>$ What * do you have</item>
-                        <item>$ what * do you carry</item>
-                        <item>$ What * is there</item>
+                        <item>What do you know?</item>
+                        <item>$ What * do you know about *</item>
                         <item>$ What are my choices</item>
-                        <item>$ do you have *</item>
-                        <item>$ which * do you have</item>
+                        <item>$ do you know *</item>
+                        <item>$ which * do you know *</item>
+                        <item>$ I like to know about *</item>
                     </grammar>
                     <input>
                         <grammar>
-                            <item>$ (Size)</item>
-                            <item>size</item>
-                            <item>sizes</item>
+                            <item>$ (Topic)</item>
+                            <item>topic</item>
+                            <item>topics</item>
                         </grammar>
                         <output>
                             <prompt selectionType="RANDOM">
-                                <item>We have small, medium, large, and extra large</item>
+                                <item>I only know about patents</item>
                             </prompt>
                         </output>
                     </input>
