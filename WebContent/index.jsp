@@ -29,7 +29,7 @@
 	<div class="_demo--container">
 	<article class="_demo--content base--article">
 		<h2 class="base--h2">
-			Try a simple coversation ...
+			Try a simple conversation with OEG bot
 		</h2>
 		<div class="_content--dialog">
 			<div class="chat-window">
@@ -71,33 +71,33 @@
 			</div>
 		</div>
 
-		<div class="_content--data">
-			<div class="tab-panels" role="tabpanel">
-				<ul class="tab-panels--tab-list" role="tablist">
-					<li class="tab-panels--tab-list-item base-li" role="presentation">
-						<a class="tab-panels--tab base--a active" href="#data-panel" aria-controls="text" role="tab">Data</a>
-					</li>
-					<li class="tab-panels--tab-list-item base-li" role="presentation">
-						<a class="tab-panels--tab base--a" href="#json-panel" aria-controls="json" role="tab">JSON</a>
-					</li>
-				</ul>
-				<div class="tab-panels--tab-content">
-					<div id="data-panel" class="tab-panels--tab-pane active" role="tab-panel">
-						<div class="base--textarea">
-							<h6 class="base--h6">Information</h6>
-							<div class="data--information">
-							</div>
-							<h6 class="base--h6">Profile</h6>
-							<div class="data--profile">
-							</div>
-						</div>
-					</div>
-					<div id="json-panel" class="tab-panels--tab-pane" role="tab-panel">
-						<textarea class="base--textarea"></textarea>
-					</div>
-				</div>
-			</div>
-		</div>
+		<%--<div class="_content--data">--%>
+			<%--<div class="tab-panels" role="tabpanel">--%>
+				<%--<ul class="tab-panels--tab-list" role="tablist">--%>
+					<%--<li class="tab-panels--tab-list-item base-li" role="presentation">--%>
+						<%--<a class="tab-panels--tab base--a active" href="#data-panel" aria-controls="text" role="tab">Data</a>--%>
+					<%--</li>--%>
+					<%--<li class="tab-panels--tab-list-item base-li" role="presentation">--%>
+						<%--<a class="tab-panels--tab base--a" href="#json-panel" aria-controls="json" role="tab">JSON</a>--%>
+					<%--</li>--%>
+				<%--</ul>--%>
+				<%--<div class="tab-panels--tab-content">--%>
+					<%--<div id="data-panel" class="tab-panels--tab-pane active" role="tab-panel">--%>
+						<%--<div class="base--textarea">--%>
+							<%--<h6 class="base--h6">Information</h6>--%>
+							<%--<div class="data--information">--%>
+							<%--</div>--%>
+							<%--<h6 class="base--h6">Profile</h6>--%>
+							<%--<div class="data--profile">--%>
+							<%--</div>--%>
+						<%--</div>--%>
+					<%--</div>--%>
+					<%--<div id="json-panel" class="tab-panels--tab-pane" role="tab-panel">--%>
+						<%--<textarea class="base--textarea"></textarea>--%>
+					<%--</div>--%>
+				<%--</div>--%>
+			<%--</div>--%>
+		<%--</div>--%>
 		<!-- Property template -->
 		<div class="data--variable hidden">
 			<span class="data--variable-title"></span>
