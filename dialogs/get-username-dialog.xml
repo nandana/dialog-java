@@ -5,13 +5,7 @@
             <output id="output_2508575">
                 <output id="output_welcome">
                     <prompt selectionType="RANDOM">
-                        <item>I am Watson, well, a bit dumb version of it scripted by OEG.</item>
-                    </prompt>
-                    <goto ref="output_getusername"/>
-                </output>
-                <output id="output_getusername">
-                    <prompt selectionType="SEQUENTIAL">
-                        <item>What's your name?</item>
+                        <item>Hello, I am a bot from OEG. What's your name?</item>
                     </prompt>
                     <getUserInput id="getUserInput_2508591">
                         <input id="input_2508594">
@@ -39,34 +33,91 @@
                     <prompt selectionType="RANDOM">
                         <item>What would you like to know?</item>
                     </prompt>
-                    <getUserInput>
-                        <input id="input_patent">
+                    <getUserInput id="getUserInput_topic">
+                        <input>
                             <grammar>
+                                <item>  patent </item>
                                 <item> * patent * </item>
                                 <item>  patent * </item>
                                 <item>  * patent </item>
+                                <item>  patents  </item>
+                                <item> * patents * </item>
+                                <item>  patents * </item>
+                                <item>  * patents </item>
                             </grammar>
                             <output>
                                 <prompt selectionType="RANDOM">
-                                    <item>Cool, I know about patents,</item>
+                                    <item>Cool, I know about patents but you will have to wait until this script is complete :) </item>
                                 </prompt>
+                                <goto ref="getUserInput_topic"/>
                             </output>
                         </input>
-                        <input>
-                            <grammar>
-                                <item>neither</item>
-                                <item>neither</item>
-                                <item>$ either</item>
-                                <item>no</item>
-                            </grammar>
+                        <default>
                             <output>
                                 <prompt selectionType="RANDOM">
-                                    <item>Okay.</item>
+                                    <item>I am sorry {User_Name} but I only know about patents. Do you want to know about patents?</item>
                                 </prompt>
-                                <goto ref="output_2414737"/>
+                                <getUserInput id="input_yes_no">
+                                    <input>
+                                        <grammar>
+                                            <item>yes</item>
+                                            <item>yep</item>
+                                            <item>yup</item>
+                                            <item>yeah</item>
+                                            <item>yeh</item>
+                                            <item>y</item>
+                                            <item>that's right</item>
+                                            <item>sure</item>
+                                            <item>yes thanks</item>
+                                            <item>yes thank you</item>
+                                            <item>yes please</item>
+                                            <item>yah</item>
+                                            <item>ya</item>
+                                            <item>for sure</item>
+                                            <item>fo shizzle</item>
+                                            <item>fo shiz</item>
+                                            <item>yeppers</item>
+                                            <item>you betcha</item>
+                                            <item>you bet</item>
+                                            <item>you bet ya</item>
+                                            <item>certainly</item>
+                                        </grammar>
+                                        <output>
+                                            <prompt selectionType="RANDOM">
+                                                <item>Cool, I know about patents but you will have to wait until this dialog script is complete :)</item>
+                                            </prompt>
+                                            <goto ref="getUserInput_topic"/>
+                                        </output>
+                                    </input>
+                                    <input>
+                                        <grammar>
+                                            <item>no</item>
+                                            <item>n</item>
+                                            <item>nope</item>
+                                            <item>no way</item>
+                                            <item>not really</item>
+                                            <item>nah</item>
+                                            <item>no thanks</item>
+                                            <item>no thank you</item>
+                                        </grammar>
+                                        <output>
+                                            <prompt selectionType="RANDOM">
+                                                <item>Well, I can't help you in that case. I am really sorry {User_Name}. </item>
+                                            </prompt>
+                                            <goto ref="getUserInput_topic"/>
+                                        </output>
+                                    </input>
+                                    <default>
+                                        <output>
+                                            <prompt selectionType="RANDOM">
+                                                <item>I am sorry, I didn't get your answer. Can you just say yes or no please?</item>
+                                            </prompt>
+                                            <goto ref="input_yes_no"/>
+                                        </output>
+                                    </default>
+                                </getUserInput>
                             </output>
-                        </input>
-
+                        </default>
                     </getUserInput>
                 </output>
             </output>
@@ -3235,234 +3286,14 @@ Say &lt;i&gt;got to go&lt;/i&gt; or &lt;i&gt;bye&lt;/i&gt; when you're finished.
             </concept>
             <concept>
                 <grammar>
-                    <item>movie</item>
-                    <item>movies</item>
-                    <item>film</item>
-                    <item>films</item>
-                    <item>flick</item>
-                    <item>flicks</item>
-                </grammar>
-            </concept>
-            <concept>
-                <grammar>
-                    <item>theater</item>
-                    <item>theaters</item>
-                    <item>theatre</item>
-                    <item>theatres</item>
-                    <item>cinema</item>
-                    <item>cinemas</item>
-                </grammar>
-            </concept>
-            <concept>
-                <grammar>
-                    <item>showtime</item>
-                    <item>showtimes</item>
-                    <item>show time</item>
-                    <item>show times</item>
-                    <item>movie time</item>
-                    <item>movie times</item>
-                </grammar>
-            </concept>
-            <concept id="concept_2456113">
-                <grammar>
-                    <item>dining</item>
-                    <item>restaurant</item>
-                    <item>restaurants</item>
-                    <item>place to eat</item>
-                    <item>places to eat</item>
-                    <item>diner</item>
-                    <item>diners</item>
-                    <item>cafe</item>
-                    <item>cafes</item>
-                    <item>cafeteria</item>
-                    <item>cafeterias</item>
-                    <item>Bar</item>
-                    <item>Bars</item>
-                    <item>Pub</item>
-                    <item>Pubs</item>
-                    <item>Tavern</item>
-                    <item>Taverns</item>
-                    <item>Brewery</item>
-                    <item>Breweries</item>
-                    <item>somewhere to eat</item>
-                    <item>eatery</item>
-                    <item>place to dine</item>
-                    <item>somewhere nice to eat</item>
-                    <item>eateries</item>
-                    <item>places to dine</item>
-                    <item>bistro</item>
-                    <item>a bistro</item>
-                    <item>bistros</item>
-                    <item>coffee shop</item>
-                    <item>coffee shops</item>
-                    <item>coffee place</item>
-                    <item>coffee places</item>
-                    <item>eating house</item>
-                    <item>eating houses</item>
-                    <item>snack bar</item>
-                    <item>snack bars</item>
-                    <item>juice bar</item>
-                    <item>juice bars</item>
-                    <item>health food shop</item>
-                    <item>fast food outlet</item>
-                    <item>fast food shop</item>
-                    <item>fast food outlets</item>
-                    <item>fast food shops</item>
-                    <item>food court</item>
-                    <item>food courts</item>
-                    <item>food mall</item>
-                    <item>food malls</item>
-                </grammar>
-            </concept>
-            <concept id="concept_2456117">
-                <grammar>
-                    <item>weather</item>
-                    <item>Rain</item>
-                    <item>Raining</item>
-                    <item>Snow</item>
-                    <item>Snowing</item>
-                    <item>Sunny</item>
-                    <item>Cloudy</item>
-                    <item>Sleet</item>
-                    <item>Freezing Rain</item>
-                    <item>Windy</item>
-                    <item>Tornado</item>
-                    <item>Hurricane</item>
-                </grammar>
-            </concept>
-            <concept id="concept_2456118">
-                <grammar>
-                    <item>traffic</item>
-                    <item>Traffic conditions</item>
-                    <item>Driving conditions</item>
-                    <item>Road conditions</item>
-                    <item>Streets</item>
-                    <item>Roads</item>
-                    <item>Freeways</item>
-                    <item>Highways</item>
-                    <item>Driving</item>
-                    <item>Rush hour</item>
-                    <item>Bus</item>
-                    <item>Buses</item>
-                    <item>Train</item>
-                    <item>Trains</item>
-                    <item>Car</item>
-                    <item>Cars</item>
-                    <item>Automobile</item>
-                    <item>Automobiles</item>
-                    <item>Bicycle</item>
-                    <item>Bicycles</item>
-                    <item>Bike</item>
-                    <item>Bikes</item>
-                    <item>Motorcycle</item>
-                    <item>Motorcycles</item>
-                    <item>Walking</item>
-                    <item>Driving</item>
-                    <item>Pedestrian</item>
-                </grammar>
-            </concept>
-            <concept>
-                <grammar>
                     <item>what is</item>
                     <item>what's</item>
                 </grammar>
             </concept>
             <concept>
                 <grammar>
-                    <item>Review</item>
-                    <item>Reviews</item>
-                    <item>Critique</item>
-                    <item>Critiques</item>
-                    <item>Popularity</item>
-                    <item>Tomatoes</item>
-                    <item>stars</item>
-                </grammar>
-            </concept>
-            <concept>
-                <grammar>
-                    <item>Ratings</item>
-                    <item>Rating</item>
-                    <item>Popularity</item>
-                    <item>Tomatoes</item>
-                    <item>stars</item>
-                </grammar>
-            </concept>
-            <concept>
-                <grammar>
                     <item>it</item>
                     <item>that</item>
-                </grammar>
-            </concept>
-            <concept id="concept_2503401">
-                <grammar>
-                    <item>family-friendly</item>
-                    <item>family</item>
-                    <item>child</item>
-                    <item>children</item>
-                    <item>childrens</item>
-                    <item>children's</item>
-                    <item>kiddy</item>
-                    <item>kids</item>
-                    <item>kid's</item>
-                    <item>kid</item>
-                    <item>family friendly</item>
-                    <item>family safe</item>
-                    <item>kid friendly</item>
-                    <item>child friendly</item>
-                    <item>safe for kids</item>
-                    <item>kid safe</item>
-                    <item>suitable for children</item>
-                    <item>suitable for kids</item>
-                    <item>suitable for a child</item>
-                    <item>suitable for a kid</item>
-                    <item>child appropriate</item>
-                    <item>appropriate for children</item>
-                    <item>not adult</item>
-                    <item>for families</item>
-                    <item>for a family</item>
-                    <item>no sex</item>
-                    <item>no violence</item>
-                    <item>clean</item>
-                </grammar>
-            </concept>
-            <concept>
-                <grammar>
-                    <item>near me</item>
-                    <item>by me</item>
-                    <item>my area</item>
-                    <item>close to me</item>
-                    <item>close by</item>
-                    <item>nearby</item>
-                    <item>in the neighborhood</item>
-                    <item>local</item>
-                    <item>locally</item>
-                    <item>fairly close</item>
-                    <item>close to us</item>
-                    <item>near to us</item>
-                    <item>short drive</item>
-                    <item>short walk</item>
-                    <item>a short drive</item>
-                    <item>a short walk</item>
-                    <item>close</item>
-                    <item>near</item>
-                    <item>around the corner</item>
-                    <item>just around the corner</item>
-                    <item>short distance</item>
-                    <item>a short distance</item>
-                    <item>close at hand</item>
-                    <item>short distance awat</item>
-                    <item>a short distance away</item>
-                    <item>walking distance</item>
-                    <item>within walking distance</item>
-                    <item>not a long distance</item>
-                    <item>not far</item>
-                    <item>not too far</item>
-                    <item>not far away</item>
-                    <item>not too far away</item>
-                    <item>in my area</item>
-                    <item>in the city</item>
-                    <item>my zipcode</item>
-                    <item>dowtown</item>
                 </grammar>
             </concept>
             <folder label="Genre">
@@ -3598,125 +3429,6 @@ Say &lt;i&gt;got to go&lt;/i&gt; or &lt;i&gt;bye&lt;/i&gt; when you're finished.
                         <item>rom-com flicks</item>
                     </grammar>
                 </concept>
-                <concept>
-                    <grammar>
-                        <item>sad film</item>
-                        <item>sad films</item>
-                        <item>sad movie</item>
-                        <item>sad movies</item>
-                        <item>sad flick</item>
-                        <item>sad flicks</item>
-                        <item>tear-jerker film</item>
-                        <item>tear-jerker films</item>
-                        <item>tear-jerker movie</item>
-                        <item>tear-jerker movies</item>
-                        <item>tear-jerker flick</item>
-                        <item>tear-jerker flicks</item>
-                        <item>tear-jerkers</item>
-                        <item>tear-jerker</item>
-                        <item>tear jerker film</item>
-                        <item>tear jerker films</item>
-                        <item>tear jerker movie</item>
-                        <item>tear jerker movies</item>
-                        <item>tear jerker flick</item>
-                        <item>tear jerker flicks</item>
-                        <item>tear jerkers</item>
-                        <item>tear jerker</item>
-                    </grammar>
-                </concept>
-                <concept id="concept_1852806">
-                    <grammar>
-                        <item>sci-fi film</item>
-                        <item>sci-fi films</item>
-                        <item>sci-fi movie</item>
-                        <item>sci-fi movies</item>
-                        <item>sci fi film</item>
-                        <item>sci fi films</item>
-                        <item>sci fi movie</item>
-                        <item>sci fi movies</item>
-                        <item>scifi film</item>
-                        <item>scifi films</item>
-                        <item>scifi movie</item>
-                        <item>scifi movies</item>
-                        <item>sciencefiction film</item>
-                        <item>sciencefiction films</item>
-                        <item>sciencefiction movie</item>
-                        <item>sciencefiction movies</item>
-                        <item>science-fiction film</item>
-                        <item>science-fiction films</item>
-                        <item>science-fiction movie</item>
-                        <item>science-fiction movies</item>
-                        <item>science fiction film</item>
-                        <item>science fiction films</item>
-                        <item>science fiction movie</item>
-                        <item>science fiction movies</item>
-                    </grammar>
-                </concept>
-                <concept id="concept_1852807">
-                    <grammar>
-                        <item>war film</item>
-                        <item>war films</item>
-                        <item>war movie</item>
-                        <item>war movies</item>
-                    </grammar>
-                </concept>
-                <concept>
-                    <grammar>
-                        <item>x rated film</item>
-                        <item>x rated films</item>
-                        <item>x rated movie</item>
-                        <item>x rated movies</item>
-                        <item>x rated flick</item>
-                        <item>x rated flicks</item>
-                        <item>x-rated film</item>
-                        <item>x-rated films</item>
-                        <item>x-rated movie</item>
-                        <item>x-rated movies</item>
-                        <item>x-rated flick</item>
-                        <item>x-rated flicks</item>
-                        <item>pornographic film</item>
-                        <item>pornographic films</item>
-                        <item>pornographic movie</item>
-                        <item>pornographic movies</item>
-                        <item>pornographic flick</item>
-                        <item>pornographic flicks</item>
-                        <item>pornography film</item>
-                        <item>pornography films</item>
-                        <item>pornography movie</item>
-                        <item>pornography movies</item>
-                        <item>pornography flick</item>
-                        <item>pornography flicks</item>
-                        <item>porn film</item>
-                        <item>porn films</item>
-                        <item>porn movie</item>
-                        <item>porn movies</item>
-                        <item>porn flick</item>
-                        <item>porn flicks</item>
-                        <item>XXX film</item>
-                        <item>XXX films</item>
-                        <item>XXX movie</item>
-                        <item>XXX movies</item>
-                        <item>XXX flick</item>
-                        <item>XXX flicks</item>
-                        <item>triple X film</item>
-                        <item>triple X films</item>
-                        <item>triple X movie</item>
-                        <item>triple X movies</item>
-                        <item>triple X flick</item>
-                        <item>triple X flicks</item>
-                        <item>porn</item>
-                        <item>porno</item>
-                        <item>pornos</item>
-                        <item>porn video</item>
-                        <item>sex video</item>
-                        <item>sex film</item>
-                        <item>sex tape</item>
-                        <item>sex flick</item>
-                        <item>sex movie</item>
-                        <item>sex movies</item>
-                        <item>adult movies</item>
-                    </grammar>
-                </concept>
             </folder>
             <folder selectionType="RANDOM" label="cdh">
                 <concept>
@@ -3763,419 +3475,9 @@ Say &lt;i&gt;got to go&lt;/i&gt; or &lt;i&gt;bye&lt;/i&gt; when you're finished.
                     </grammar>
                 </concept>
             </folder>
-            <concept id="concept_2510154">
-                <grammar>
-                    <item>Adult</item>
-                    <item>Adults Only</item>
-                    <item>NC 17</item>
-                    <item>NC-17</item>
-                    <item>NC17</item>
-                    <item>NC 17 rated</item>
-                    <item>NC-17 rated</item>
-                    <item>NC-17-rated</item>
-                    <item>NC 17-rated</item>
-                    <item>NC17 rated</item>
-                    <item>NC17-rated</item>
-                    <item>X</item>
-                    <item>X-rated</item>
-                    <item>X rated</item>
-                    <item>XXX</item>
-                    <item>XXX-rated</item>
-                    <item>XXX rated</item>
-                    <item>Triple X</item>
-                    <item>Triple X-rated</item>
-                    <item>Triple X rated</item>
-                    <item>NC seventeen</item>
-                    <item>NC-seventeen</item>
-                </grammar>
-            </concept>
         </folder>
     </flow>
     <entities>
-        <entity name="CERTIFICATION">
-            <value name="G" value="G">
-                <grammar>
-                    <item>G Rated</item>
-                    <item>G-Rated</item>
-                    <item>G</item>
-                    <item>General Audience</item>
-                </grammar>
-            </value>
-            <value name="PG" value="PG">
-                <grammar>
-                    <item>PG Rated</item>
-                    <item>PG-rated</item>
-                    <item>PG</item>
-                    <item>Parental Guidance</item>
-                </grammar>
-            </value>
-            <value name="PG-13" value="PG-13">
-                <grammar>
-                    <item>PG 13</item>
-                    <item>PG-13</item>
-                    <item>PG13</item>
-                    <item>PG 13 rated</item>
-                    <item>PG-13 rated</item>
-                    <item>PG-13-rated</item>
-                    <item>PG13 rated</item>
-                    <item>PG13-rated</item>
-                    <item>Parents Strongly Cautioned</item>
-                    <item>PG thirteen</item>
-                    <item>PG-thirteen</item>
-                </grammar>
-            </value>
-            <value name="R" value="R">
-                <grammar>
-                    <item>R rated</item>
-                    <item>R-rated</item>
-                    <item>R</item>
-                    <item>Restricted</item>
-                </grammar>
-            </value>
-            <value name="NR" value="NR">
-                <grammar>
-                    <item>Not Rated</item>
-                    <item>Not-rated</item>
-                </grammar>
-            </value>
-        </entity>
-        <entity name="GENRE">
-            <value name="Action" value="Action">
-                <grammar>
-                    <item>Action</item>
-                    <item>car chases</item>
-                    <item>explosions</item>
-                </grammar>
-            </value>
-            <value name="Adventure" value="Adventure">
-                <grammar>
-                    <item>adventures</item>
-                </grammar>
-            </value>
-            <value name="Animation" value="Animation">
-                <grammar>
-                    <item>Anime</item>
-                    <item>Animated</item>
-                    <item>Cartoon</item>
-                    <item>Cartoons</item>
-                </grammar>
-            </value>
-            <value name="Comedy" value="Comedy">
-                <grammar>
-                    <item>comedies</item>
-                    <item>funny</item>
-                    <item>humor</item>
-                    <item>comedians</item>
-                    <item>comedy</item>
-                    <item>good laugh</item>
-                    <item>makes me laugh</item>
-                    <item>make me laugh</item>
-                    <item>hilarious</item>
-                    <item>romp</item>
-                </grammar>
-            </value>
-            <value name="Crime" value="Crime">
-                <grammar>
-                    <item>serial killer</item>
-                    <item>serial killers</item>
-                </grammar>
-            </value>
-            <value name="Documentary" value="Documentary">
-                <grammar>
-                    <item>documentaries</item>
-                </grammar>
-            </value>
-            <value name="Drama" value="Drama">
-                <concept ref="concept_1852694"/>
-                <grammar>
-                    <item>dramas</item>
-                </grammar>
-            </value>
-            <value name="Family" value="Family">
-                <concept ref="concept_2503401"/>
-                <grammar>
-                    <item>child</item>
-                    <item>childs</item>
-                    <item>child's</item>
-                    <item>children</item>
-                    <item>childrens</item>
-                    <item>children's</item>
-                    <item>kid</item>
-                    <item>kids</item>
-                    <item>kid's</item>
-                    <item>kids'</item>
-                </grammar>
-            </value>
-            <value name="Fantasy" value="Fantasy">
-                <grammar>
-                    <item>middle earth</item>
-                    <item>lord of the rings</item>
-                    <item>game of thrones</item>
-                    <item>dragons</item>
-                    <item>dragon</item>
-                    <item>wizards</item>
-                    <item>wizard</item>
-                    <item>dwarfs</item>
-                    <item>dwarves</item>
-                    <item>dwarf</item>
-                    <item>hobbits</item>
-                    <item>hobbit</item>
-                </grammar>
-            </value>
-            <value name="Foreign" value="Foreign">
-                <grammar>
-                    <item>international</item>
-                    <item>british</item>
-                    <item>french</item>
-                    <item>indian</item>
-                    <item>italian</item>
-                    <item>chinese</item>
-                    <item>japanese</item>
-                    <item>canadian</item>
-                    <item>german</item>
-                </grammar>
-            </value>
-            <value name="History" value="History">
-                <concept ref="concept_1852810"/>
-                <grammar>
-                    <item>historical</item>
-                    <item>period piece</item>
-                </grammar>
-            </value>
-            <value name="Horror" value="Horror">
-                <concept ref="concept_1852697"/>
-                <grammar>
-                    <item>scary</item>
-                    <item>ghost</item>
-                    <item>creepy</item>
-                </grammar>
-            </value>
-            <value name="Music" value="Music"/>
-            <value name="Mystery" value="Mystery">
-                <grammar>
-                    <item>mysteries</item>
-                    <item>whodunnit</item>
-                </grammar>
-            </value>
-            <value name="Romance" value="Romance">
-                <concept ref="concept_1852702"/>
-                <grammar>
-                    <item>romances</item>
-                    <item>chick flicks</item>
-                    <item>chick flick</item>
-                    <item>sexy</item>
-                    <item>steamy</item>
-                    <item>take my date</item>
-                    <item>take a date</item>
-                    <item>for my date</item>
-                </grammar>
-            </value>
-            <value name="Science Fiction" value="Science Fiction">
-                <concept ref="concept_1852806"/>
-                <grammar>
-                    <item>Sci-fi</item>
-                    <item>Scifi</item>
-                    <item>space</item>
-                    <item>alien</item>
-                    <item>aliens</item>
-                    <item>little green men</item>
-                    <item>star wars</item>
-                </grammar>
-            </value>
-            <value name="TV Movie" value="TV Movie">
-                <grammar>
-                    <item>Made for TV movie</item>
-                    <item>Made for TV movies</item>
-                    <item>TV movies</item>
-                </grammar>
-            </value>
-            <value name="Thriller" value="Thriller">
-                <grammar>
-                    <item>Thrillers</item>
-                    <item>suspense</item>
-                    <item>suspenseful</item>
-                </grammar>
-            </value>
-            <value name="War" value="War">
-                <concept ref="concept_1852807"/>
-                <grammar>
-                    <item>WWII</item>
-                    <item>WWI</item>
-                </grammar>
-            </value>
-            <value name="Western" value="Western">
-                <grammar>
-                    <item>western</item>
-                    <item>old west</item>
-                    <item>cowboys</item>
-                    <item>cowboy</item>
-                    <item>cowboys and indians</item>
-                    <item>cowboys &amp; indians</item>
-                </grammar>
-            </value>
-        </entity>
-        <entity name="DINING">
-            <value name="restaurants" value="restaurants">
-                <concept ref="concept_2456113"/>
-            </value>
-            <value name="bars" value="bars"/>
-        </entity>
-        <entity name="WEATHER">
-            <value name="weather" value="weather">
-                <concept ref="concept_2456117"/>
-            </value>
-        </entity>
-        <entity name="TRAFFIC">
-            <value name="traffic" value="traffic">
-                <concept ref="concept_2456118"/>
-            </value>
-        </entity>
-        <entity name="RECENCY">
-            <value name="Upcoming" value="Upcoming">
-                <grammar>
-                    <item>coming soon</item>
-                    <item>coming</item>
-                    <item>another time</item>
-                    <item>another night</item>
-                    <item>another day</item>
-                    <item>later time</item>
-                    <item>upcoming</item>
-                    <item>next month</item>
-                    <item>next week</item>
-                </grammar>
-            </value>
-            <value name="Current" value="Current">
-                <grammar>
-                    <item>playing</item>
-                    <item>showing</item>
-                    <item>currently</item>
-                    <item>in theaters</item>
-                    <item>in theater</item>
-                    <item>in theatres</item>
-                    <item>in theatre</item>
-                    <item>recent</item>
-                    <item>new</item>
-                    <item>now</item>
-                    <item>today</item>
-                    <item>tonight</item>
-                    <item>yesterday</item>
-                    <item>this afternoon</item>
-                    <item>this morning</item>
-                    <item>this evening</item>
-                    <item>this week</item>
-                    <item>ongoing</item>
-                    <item>latest</item>
-                    <item>now</item>
-                    <item>already at the movies</item>
-                    <item>whatever is on</item>
-                </grammar>
-            </value>
-        </entity>
-        <entity name="ZIPCODE">
-            <value name="10024" value="10024"/>
-            <value name="07928" value="07928"/>
-            <value name="95118" value="95118"/>
-            <value name="95120" value="95120"/>
-        </entity>
-        <entity name="VIRTUAL_AGENTS">
-            <value name="Watson" value="Watson"/>
-            <value name="Siri" value="Siri"/>
-            <value name="Cortana" value="Cortana"/>
-            <value name="Google Now" value="Google Now"/>
-            <value name="HAL" value="HAL"/>
-            <value name="Glados" value="Glados"/>
-            <value name="Skynet" value="Skynet"/>
-            <value name="Agent Smith" value="Agent Smith"/>
-        </entity>
-        <entity name="OTHER_MOVIE">
-            <value name="Actor" value="Actor">
-                <grammar>
-                    <item>Actors</item>
-                    <item>Actress</item>
-                    <item>Actresses</item>
-                    <item>Movie Star</item>
-                    <item>Movie Stars</item>
-                    <item>who stars</item>
-                    <item>who starred</item>
-                </grammar>
-            </value>
-            <value name="Director" value="Director">
-                <grammar>
-                    <item>Directors</item>
-                    <item>who directed</item>
-                    <item>who directs</item>
-                </grammar>
-            </value>
-            <value name="Title" value="Title">
-                <grammar>
-                    <item>Titles</item>
-                    <item>Movie Name</item>
-                    <item>Movie Names</item>
-                </grammar>
-            </value>
-        </entity>
-        <entity name="BY_OTHER_MOVIE">
-            <value name="by Theater" value="by Theater">
-                <grammar>
-                    <item>by theaters</item>
-                    <item>by theatre</item>
-                    <item>by theatres</item>
-                    <item>by cinema</item>
-                    <item>by cinemas</item>
-                </grammar>
-            </value>
-            <value name="by Date" value="by Date">
-                <grammar>
-                    <item>by day</item>
-                </grammar>
-            </value>
-        </entity>
-        <entity name="UNSUPPORTED_GENRES">
-            <value name="Musical" value="Musical">
-                <grammar>
-                    <item>musicals</item>
-                    <item>broadway</item>
-                </grammar>
-            </value>
-            <value name="Romantic Comedy" value="Romantic Comedy">
-                <concept ref="concept_1852702"/>
-                <grammar>
-                    <item>romantic comedies</item>
-                    <item>rom com</item>
-                    <item>romcom</item>
-                    <item>rom coms</item>
-                    <item>romcoms</item>
-                </grammar>
-            </value>
-            <value name="Sports" value="Sports">
-                <grammar>
-                    <item>sport</item>
-                    <item>baseball</item>
-                    <item>football</item>
-                    <item>soccer</item>
-                    <item>tennis</item>
-                    <item>olymic</item>
-                    <item>olymics</item>
-                    <item>cricket</item>
-                    <item>basketball</item>
-                    <item>hockey</item>
-                </grammar>
-            </value>
-            <value name="Disaster" value="Disaster">
-                <grammar>
-                    <item>disasters</item>
-                    <item>earthquake</item>
-                    <item>earthquakes</item>
-                    <item>plague</item>
-                    <item>plagues</item>
-                    <item>apocalypse</item>
-                    <item>end of the world</item>
-                </grammar>
-            </value>
-            <value name="Adult" value="Adult">
-                <concept ref="concept_2510154"/>
-            </value>
-        </entity>
         <entity name="DYNAMIC_DATA">
             <value name="DataCapture" value="DataCapture">
                 <grammar>
@@ -4300,60 +3602,6 @@ border-color:#000000;
             <var name="DateTime_Mentioned_ENT" type="TEXT"/>
         </var_folder>
     </variables>
-    <translations>
-        <translation>
-            <src>mvies</src>
-            <tgt>movies</tgt>
-        </translation>
-        <translation>
-            <src>moveis</src>
-            <tgt>movies</tgt>
-        </translation>
-        <translation>
-            <src>filsm</src>
-            <tgt>films</tgt>
-        </translation>
-        <translation>
-            <src>fimls</src>
-            <tgt>films</tgt>
-        </translation>
-        <translation>
-            <src>moovies</src>
-            <tgt>movies</tgt>
-        </translation>
-        <translation>
-            <src>mvie</src>
-            <tgt>movie</tgt>
-        </translation>
-        <translation>
-            <src>moovie</src>
-            <tgt>movie</tgt>
-        </translation>
-        <translation>
-            <src>scyfy</src>
-            <tgt>science fiction</tgt>
-        </translation>
-        <translation>
-            <src>syfy</src>
-            <tgt>science fiction</tgt>
-        </translation>
-        <translation>
-            <src>sigh fi</src>
-            <tgt>science fiction</tgt>
-        </translation>
-        <translation>
-            <src>rmance</src>
-            <tgt>romance</tgt>
-        </translation>
-        <translation>
-            <src>draam</src>
-            <tgt>drama</tgt>
-        </translation>
-        <translation>
-            <src>thrller</src>
-            <tgt>thriller</tgt>
-        </translation>
-    </translations>
     <settings>
         <setting name="USERIDNUM" type="USER">768</setting>
         <setting name="EMAIL" type="USER"></setting>

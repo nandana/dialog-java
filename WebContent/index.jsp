@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Dialog</title>
+<title>Waston Dialog Test - Nandana Mihindukulasooriya</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,47 +32,17 @@
 		<div class="banner--service-info">
 			<h1 class="banner--service-title base--h1">
 				<img class="banner--service-icon_INLINE" src="images/icons/dialog.svg" alt="Concept Insight Service Demo Icon">
-				Dialog
+				Dialog Service Test
 			</h1>
-			<div class="banner--service-description">The Dialog service provides a comprehensive, technology platform for managing conversations between virtual agents and users through an Application Programming Interface (API).</div>
-			<div class="banner--service-resource">
-				<span class="icon icon-link"></span>
-				<strong>Resources:</strong>
+			<div class="banner--service-description">
+				This is a simple test to check how the Watson Dialog Service Works based on the Watson Developer Cloud documentation.
 			</div>
-			<div class="banner--service-links">
-				<li class="base--li banner--service-link-item">
-					<a href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/apis/dialog-apis.html" class="base--a">API Overview</a>
-				</li>
-				<li class="base--li banner--service-link-item">
-					<a href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/dialog.html" class="base--a">Documentation</a>
-				</li>
-				<li class="base--li banner--service-link-item">
-					<a href="https://bluemix.net/deploy?repository=https://github.com/watson-developer-cloud/dialog-java.git" class="base--a">Fork and Deploy on Bluemix</a>
-				</li>
-				<li class="base--li banner--service-link-item">
-					<a href="https://github.com/watson-developer-cloud/dialog-java" class="base--a">Fork on Github</a>
-				</li>
-			</div>
-		</div>
 	</div>
 </div>
 	<div class="_demo--container">
 	<article class="_demo--content base--article">
 		<h2 class="base--h2">
-			Choose a Dialog Template
-		</h2>
-		<p>A template that contains prepared structures to create natural dialogs for your app.</p>
-		<div class="radio-group">
-			<input type="radio" name="dialog-template" id="hello-radio" value="hello" class="base--radio" checked>
-			<label for="hello-radio" class="base--label radio-group--label">Order A Pizza Template</label>
-			<%--<input type="radio" name="dialog-template" id="yellow-radio" value="yellow" class="base--radio" disabled>--%>
-			<%--<label for="yellow-radio" class="base--label radio-group--label">Tech Support Template</label>--%>
-			<%--<input type="radio" name="dialog-template" id="green-radio" value="green" class="base--radio" disabled>--%>
-			<%--<label for="green-radio" class="base--label radio-group--label">Movie Template</label>--%>
-		</div>
-		<div class="separate-line"></div>
-		<h2 class="base--h2">
-			Try the service
+			Try the simple test
 		</h2>
 		<div class="_content--dialog">
 			<div class="chat-window">
