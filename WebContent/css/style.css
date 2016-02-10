@@ -1167,7 +1167,8 @@ pre[class*=" language-"] {
 
 @media (min-width: 1200px) {
   ._demo--container {
-    width: 992px;
+    /*width: 992px;*/
+    width: 90%;
     margin: 0rem auto; } }
 
 ._demo--heading {
