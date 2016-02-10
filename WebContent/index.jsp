@@ -23,9 +23,6 @@
 		</nav>
 	</div>
 </header>
-	<div class="_demo--banner">
-
-</div>
 	<div class="_demo--container">
 	<article class="_demo--content base--article">
 		<h2 class="base--h2">
