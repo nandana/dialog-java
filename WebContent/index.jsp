@@ -13,8 +13,8 @@
 	<header class="_demo--heading">
 	<div class="_demo--container">
 		<a class="wordmark" href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/">
-			<span class="wordmark--left">OEG</span>
-			<span class="wordmark--right">Watson Dialog Test</span>
+			<span class="wordmark--left">Test -</span>
+			<span class="wordmark--right">Watson Dialog Service</span>
 		</a>
 		<nav class="heading-nav">
 			<a class="heading-nav--item" href="http://www.oeg-upm.net/">
@@ -23,26 +23,13 @@
 		</nav>
 	</div>
 </header>
-
 	<div class="_demo--banner">
-	<div class="_demo--container">
-		<div class="banner--service-icon-container">
-			<img class="banner--service-icon" src="images/icons/dialog.svg" alt="Concept Insight Service Demo Icon">
-		</div>
-		<div class="banner--service-info">
-			<h1 class="banner--service-title base--h1">
-				<img class="banner--service-icon_INLINE" src="images/icons/dialog.svg" alt="Concept Insight Service Demo Icon">
-				Dialog Service Test
-			</h1>
-			<div class="banner--service-description">
-				This is a simple test to check how the Watson Dialog Service Works based on the Watson Developer Cloud documentation.
-			</div>
-	</div>
+
 </div>
 	<div class="_demo--container">
 	<article class="_demo--content base--article">
 		<h2 class="base--h2">
-			Try the simple test
+			Try a simple coversation ...
 		</h2>
 		<div class="_content--dialog">
 			<div class="chat-window">
